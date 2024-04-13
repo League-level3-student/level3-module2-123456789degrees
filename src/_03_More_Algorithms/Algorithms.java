@@ -78,4 +78,56 @@ public class Algorithms {
     	}
     	return results;
     }
+    public static List<String> sortDNA(List<String> DNA) {
+    	for (int i = 0; i < DNA.size(); i++) {
+    		for (int j = 0; j < DNA.size() - 1; j++) {
+    			if (DNA.get(j).length() > DNA.get(j+1).length()) {
+    				String temp = DNA.get(j);
+    				DNA.set(j, DNA.get(j+1));
+    				DNA.set(j+1, temp);
+    			}
+    		}
+    	}
+    	return DNA;
+    }
+    public static List<String> sortWords(List<String> str) {
+    	for (int i = 0; i < str.size(); i++) {
+    		for (int j = 0; j < str.size() - 1; j++) {
+    			if (str.get(j).compareTo(str.get(j+1)) > 0) {
+    				String temp = str.get(j);
+    				str.set(j, str.get(j+1));
+    				str.set(j+1, temp);
+    			}
+    		}
+    	}
+    	return str;
+    }
+    public static boolean isPrime(int num) {
+    	if (num <= 1) {
+    		return false;
+    	}
+    	for (int i = 2; i <= num/2; i++) {
+    		if (num % i == 0) {
+    			return false;
+    		}
+    	}
+    	return true;
+    }
+    public static boolean isSquare(int num) {
+    	int sqrt = (int)Math.sqrt(num);
+    	if (sqrt*sqrt == num) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
+    public static boolean isCube(int num) {
+    	for (int i = 0; i <= num; i++) {
+    		if (i * i * i == num) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
 }
